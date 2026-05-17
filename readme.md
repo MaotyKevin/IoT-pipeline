@@ -1,10 +1,10 @@
-# 🌡️ IoT Environmental Monitoring System (ESP8266 + MQTT + Node-RED + InfluxDB + Grafana)
+# IoT Environmental Monitoring System (ESP8266 + MQTT + Node-RED + InfluxDB + Grafana)
 
 This project is a complete end-to-end IoT system that collects temperature and humidity data using an ESP8266 with an SHT30 sensor, transmits it via MQTT, processes it with Node-RED, stores it in InfluxDB, and visualizes it in Grafana with real-time dashboards and alerts.
 
 ---
 
-# 🏗️ Architecture Overview
+# Architecture Overview
 
 ESP8266 (SHT30 Sensor)
 → MQTT Broker (Mosquitto)
@@ -14,7 +14,7 @@ ESP8266 (SHT30 Sensor)
 
 ---
 
-# 📡 Hardware Layer
+# Hardware Layer
 
 - ESP8266 (Wemos D1 mini)
 - SHT30 temperature & humidity sensor (I2C)
@@ -29,7 +29,7 @@ Then publishes data via MQTT topics:
 
 ---
 
-# 📶 Communication Layer (MQTT)
+# Communication Layer (MQTT)
 
 MQTT broker used: Mosquitto
 
@@ -39,7 +39,7 @@ Role:
 
 ---
 
-# 🔄 Processing Layer (Node-RED)
+# Processing Layer (Node-RED)
 
 :contentReference[oaicite:0]{index=0}  
 
@@ -54,7 +54,7 @@ Role:
 
 ---
 
-# 🗄️ Database Layer (InfluxDB)
+# Database Layer (InfluxDB)
 
 :contentReference[oaicite:1]{index=1}  
 
@@ -67,7 +67,7 @@ Role:
 
 ---
 
-# 📊 Visualization Layer (Grafana)
+# Visualization Layer (Grafana)
 
 :contentReference[oaicite:2]{index=2}  
 
