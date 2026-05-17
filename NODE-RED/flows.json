@@ -1,0 +1,201 @@
+[
+    {
+        "id": "4ba1ce3aa13025a5",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b49529112b5ba72b",
+        "type": "mqtt in",
+        "z": "4ba1ce3aa13025a5",
+        "name": "",
+        "topic": "iot/weather/temp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ff4780c4d729d919",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 60,
+        "wires": [
+            [
+                "6d5245378f79dde7"
+            ]
+        ]
+    },
+    {
+        "id": "62d0f106dc41d503",
+        "type": "mqtt in",
+        "z": "4ba1ce3aa13025a5",
+        "name": "",
+        "topic": "iot/weather/hum",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ff4780c4d729d919",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "384288d0e42c69ea"
+            ]
+        ]
+    },
+    {
+        "id": "6d5245378f79dde7",
+        "type": "function",
+        "z": "4ba1ce3aa13025a5",
+        "name": "function 1",
+        "func": "return {\n    payload: [\n        {\n            measurement: \"temperature\",\n            value: parseFloat(msg.payload)\n        }\n    ]\n};\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 120,
+        "wires": [
+            [
+                "f29a642e7d7771e3",
+                "dbb20f91431e24dd"
+            ]
+        ]
+    },
+    {
+        "id": "384288d0e42c69ea",
+        "type": "function",
+        "z": "4ba1ce3aa13025a5",
+        "name": "function 2",
+        "func": "return {\n    payload: [\n        {\n            measurement: \"humidity\",\n            value: parseFloat(msg.payload)\n        }\n    ]\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "5763baaa1f9f7660",
+                "dbb20f91431e24dd"
+            ]
+        ]
+    },
+    {
+        "id": "f29a642e7d7771e3",
+        "type": "influxdb out",
+        "z": "4ba1ce3aa13025a5",
+        "influxdb": "f22e4d8e45b89c9e",
+        "name": "",
+        "measurement": "temperature",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "ENI",
+        "bucket": "ENI",
+        "x": 810,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5763baaa1f9f7660",
+        "type": "influxdb out",
+        "z": "4ba1ce3aa13025a5",
+        "influxdb": "f22e4d8e45b89c9e",
+        "name": "",
+        "measurement": "humidity",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "ENI",
+        "bucket": "ENI",
+        "x": 820,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "dbb20f91431e24dd",
+        "type": "debug",
+        "z": "4ba1ce3aa13025a5",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "ff4780c4d729d919",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f22e4d8e45b89c9e",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8086",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "691962af2fc71d9b",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-influxdb": "0.7.0"
+        }
+    }
+]
