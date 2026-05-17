@@ -83,7 +83,7 @@ from(bucket: "ENI")
   |> range(start: -1h)
   |> filter(fn: (r) => r._measurement == "temperature")
   |> filter(fn: (r) => r._field == "value")
-
+```
 ---
 
 ## Credits
