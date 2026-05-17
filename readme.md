@@ -4,6 +4,32 @@ This project is a complete end-to-end IoT system that collects temperature and h
 
 ---
 
+# Requirements
+
+## Hardware
+
+* ESP8266 board, such as a Wemos D1 mini
+* SHT30 temperature and humidity sensor
+* USB cable for flashing and power
+* Local network with access to the MQTT broker machine
+
+## Software and Tools
+
+* Arduino IDE 2.x or Arduino IDE 1.8.x
+* ESP8266 board package for Arduino IDE
+* WEMOS SHT3x Arduino Library
+* PubSubClient library for MQTT
+* Node-RED
+* Mosquitto MQTT broker
+* InfluxDB
+* Grafana
+* A web browser for dashboard access
+
+## Optional but Useful
+
+* VS Code for editing the project files
+* Serial monitor tool for debugging sensor output
+
 # Architecture Overview
 
 ESP8266 (SHT30 Sensor)
