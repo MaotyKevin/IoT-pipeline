@@ -83,3 +83,9 @@ from(bucket: "ENI")
   |> range(start: -1h)
   |> filter(fn: (r) => r._measurement == "temperature")
   |> filter(fn: (r) => r._field == "value")
+
+---
+
+## Credits
+
+* WEMOS SHT3x Arduino Library by Wemos: [https://github.com/wemos/WEMOS_SHT3x_Arduino_Library](https://github.com/wemos/WEMOS_SHT3x_Arduino_Library)
