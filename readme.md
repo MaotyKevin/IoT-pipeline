@@ -115,3 +115,5 @@ from(bucket: "ENI")
 ## Credits
 
 * WEMOS SHT3x Arduino Library by Wemos: [https://github.com/wemos/WEMOS_SHT3x_Arduino_Library](https://github.com/wemos/WEMOS_SHT3x_Arduino_Library)
+
+* Working influxDB version 2.x : https://github.com/influxdata/influxdb/releases
